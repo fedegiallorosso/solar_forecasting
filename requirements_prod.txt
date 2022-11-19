@@ -1,0 +1,4 @@
+# Feel free to use this file to list the strict minimum requirements to copy inside your docker container in production
+# You may want to remove dev requirements such as ipykernel, matplotlib etc...
+
+# YOUR CODE HERE
