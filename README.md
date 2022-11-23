@@ -1,8 +1,8 @@
 # Data analysis
 - Document here the project: solar_forecasting
 - Description: Project Description
-- Data Source:
-- Type of analysis:
+- Data Source: Challenge Data
+- Type of analysis: Machine Learning/ Deep Learning
 
 Please document the project the better you can.
 
@@ -11,6 +11,7 @@ Please document the project the better you can.
 The initial setup.
 
 Create virtualenv and install the project:
+
 ```bash
 sudo apt-get install virtualenv python-pip python-dev
 deactivate; virtualenv ~/venv ; source ~/venv/bin/activate ;\
@@ -23,6 +24,7 @@ make clean install test
 ```
 
 Check for solar_forecasting in gitlab.com/{group}.
+
 If your project is not set please add it:
 
 - Create a new project on `gitlab.com/{group}/solar_forecasting`
