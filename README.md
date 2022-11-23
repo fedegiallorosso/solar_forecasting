@@ -1,7 +1,8 @@
 # Data analysis
 - Document here the project: solar_forecasting
-- Description: Project Description
-- Data Source: Challenge Data
+- Description:  Develop machine learning or deep learning approaches on sequences of images to provide better short-term forecast of future image of SSI on horizontal plan, noted GHI (Global Horizontal Irradiance), for time horizon ranging from 15 minutes to 1 hour, with a time resolution of 15 min and a spatial resolution of 3 km.
+
+- Data Source: Challenge Data and Copernicus Radiation Images
 - Type of analysis: Machine Learning/ Deep Learning
 
 Please document the project the better you can.
