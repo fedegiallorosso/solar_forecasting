@@ -12,8 +12,8 @@ def download_file(bucket_name = os.environ.get("BUCKET_NAME"),
     If download_to_disk = False then it will save to memory.
     If download_to_disk = True then it will save to your local disk.
     """
-    print (bucket_name)
-    print (blob_name)
+    # print (bucket_name)
+    # print (blob_name)
 
     storage_client = storage.Client()
 
@@ -39,7 +39,7 @@ def download_file(bucket_name = os.environ.get("BUCKET_NAME"),
         )
     )
 
-    return None
+    return
 
 #print (os.environ.get("BUCKET_NAME"))
 download_file(download_to_disk = True)
