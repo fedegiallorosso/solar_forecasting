@@ -18,7 +18,11 @@ google-cloud-storage
 pyarrow
 
 mlflow
+<<<<<<< HEAD
 #sunpos
+=======
+# sunpos
+>>>>>>> e41e4267222f17633cd4bf34fef5858d34561f4b
 prefect<2
 prefect[viz]
 psycopg2-binary
