@@ -41,9 +41,6 @@ def download_file(bucket_name = os.environ.get("BUCKET_NAME"),
 
     return "Download complete!"
 
-#print (os.environ.get("BUCKET_NAME"))
-# download_file(download_to_disk = True)
-
 if __name__ == "__main__":
     download_file(download_to_disk = True)
     print("Download complete!")
