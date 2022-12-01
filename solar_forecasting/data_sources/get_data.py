@@ -6,7 +6,7 @@ import os
 def download_file(bucket_name = os.environ.get("BUCKET_NAME"),
                     blob_name = os.environ.get("BLOB_NAME"),
                     download_to_disk = False,
-                    destination_file_name = '../../raw_data/data2.npz'):
+                    destination_file_name = '../../raw_data/datafede2.npz'):
 
     """Download a file from Google Cloud Storage.
     If download_to_disk = False then it will save to memory.
@@ -23,7 +23,7 @@ def download_file(bucket_name = os.environ.get("BUCKET_NAME"),
 
     if download_to_disk == True:
 
-        blob.download_to_filename(destination_file_name)
+        blob.download_to_filename(destination_file_name, end=6000000)
         print(
             "Downloaded storage object {} from bucket {} to local file {}.".format(
             blob_name, bucket_name, destination_file_name
