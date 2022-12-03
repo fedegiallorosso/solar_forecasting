@@ -6,7 +6,7 @@ import os
 def download_file(bucket_name = os.environ.get("BUCKET_NAME"),
                     blob_name = os.environ.get("BLOB_NAME"),
                     download_to_disk = False,
-                    destination_file_name = '../../raw_data/new_GHI_chunk.npy'):
+                    destination_file_name = '../../raw_data/new2_freitag.npy'):
 
     """Download a file from Google Cloud Storage.
     If download_to_disk = False then it will save to memory.
@@ -19,22 +19,15 @@ def download_file(bucket_name = os.environ.get("BUCKET_NAME"),
 
     bucket = storage_client.bucket(bucket_name)
 
-    chunk_size=65536
-
-    blob = bucket.blob(blob_name, chunk_size=chunk_size)
-
-    print (blob)
-
-    print ("****")
+    blob = bucket.blob(blob_name)
 
     if download_to_disk == True:
 
-        blob.download_to_filename(destination_file_name)
-        print(
-            "Downloaded storage object {} from bucket {} to local file {}.".format(
+        blob.download_to_filename(destination_file_name, end=65536)
+        print("Downloaded storage object {} from bucket {} to local file {}.".format(
             blob_name, bucket_name, destination_file_name
+            )
         )
-    )
 
     if download_to_disk == False:
 
