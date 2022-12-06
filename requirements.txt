@@ -10,7 +10,7 @@ pytest
 seaborn
 sklearn
 yapf
-# tensorflow
+tensorflow
 
 # prevent bq 3+ db-dtypes package error when running training from bq
 google-cloud-bigquery<3.0.0

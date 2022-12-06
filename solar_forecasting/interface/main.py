@@ -31,7 +31,7 @@ def preprocess():
     #row_count =
     #cleaned_row_count = 0
     source_name = '../../raw_data/baseline.npz' # f"{source_type}_{DATASET_SIZE}"
-    destination_name = '../../raw_data/processed_data.npy'
+    #destination_name = '../../raw_data/processed_data.npy'
 
     while (chunk_id<3):
 
@@ -64,17 +64,17 @@ def preprocess():
 
     #    data_processed_chunk = pd.DataFrame(
     #        np.concatenate((X_processed_chunk, y_chunk), axis=1))
-
+        destination_name = f'../../raw_data/processed_data/{chunk_id+1}.npy'
         # save and append the chunk
         print (X_chunk_cleaned[0,:,0,0,0])
-        if chunk_id == 0:
-            with open(destination_name, 'wb') as f:
-                np.save(f, X_chunk_cleaned)
-                f.close()
-        else:
-            with open(destination_name, 'ab') as f:
-                np.save(f, X_chunk_cleaned)
-                f.close()
+        #if chunk_id == 0:
+        with open(destination_name, 'wb') as f:
+            np.save(f, X_chunk_cleaned)
+            #f.close()
+        #else:
+            #with open(destination_name, 'ab') as f:
+                #np.save(f, X_chunk_cleaned)
+                #f.close()
 
 
     #    save_chunk(destination_name=destination_name,
