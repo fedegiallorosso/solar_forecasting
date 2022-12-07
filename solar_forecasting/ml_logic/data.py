@@ -12,9 +12,7 @@ def clean_data(X):
 
 def get_chunk(index):
 
-
-    file_path = os.path.join(os.environ.get("LOCAL_DATA_PATH"),)
-    print(file_path)
+    file_path = os.path.join(os.environ.get("LOCAL_DATA_PATH"), "raw_data", os.environ.get("FINE_NAME_X_TRAIN"))
 
     data = np.load(file_path, allow_pickle=True)
 

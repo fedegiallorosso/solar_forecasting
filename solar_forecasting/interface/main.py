@@ -5,18 +5,24 @@ from colorama import Fore, Style
 from solar_forecasting.data_sources.get_data import download_file
 import os
 
+def download():
+    """
+    Download the file from Google Cloud Storage using the function download_file
+    """
+    download_file()
+
+    return None
+
 def preprocess():
     """
     Preprocess the dataset by chunks fitting in memory.
     parameters:
     - source_type: 'train' or 'val'
     """
-    print("\n⭐️ use case: preprocess")
+    print("\n⭐️ Preprocess in progress ...")
 
     # iterate on the dataset, by chunks
     chunk_id = 0  # monthly
-
-    download_file(download_to_disk = True)
 
     while (chunk_id<3):
 
@@ -41,4 +47,5 @@ def preprocess():
     return None
 
 if __name__ == '__main__':
+    download()
     preprocess()
