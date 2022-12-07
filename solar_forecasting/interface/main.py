@@ -22,9 +22,9 @@ def preprocess():
     print("\n⭐️ Preprocess in progress ...")
 
     # iterate on the dataset, by chunks
-    chunk_id = 0  # monthly
+    chunk_id = 1  # monthly
 
-    while (chunk_id<3):
+    while (chunk_id<4):
 
         print(Fore.BLUE + f"\nProcessing chunk n°{chunk_id}..." + Style.RESET_ALL)
 
@@ -32,10 +32,7 @@ def preprocess():
 
         X_chunk_cleaned = clean_data(X_chunk)
 
-        destination_name = f'../../raw_data/processed_data/{chunk_id+1}.npy'
-
-        # save and append the chunk
-        print (X_chunk_cleaned[0,:,0,0,0])
+        destination_name = f'../../raw_data/processed_data/{chunk_id}.npy'
 
         with open(destination_name, 'wb') as f:
             np.save(f, X_chunk_cleaned)
