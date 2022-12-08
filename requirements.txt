@@ -1,32 +1,32 @@
 colorama
-ipdb
-ipykernel
+#ipdb
+#ipykernel
 matplotlib
 numpy
 pandas
-nbresult
-pygeohash
-pytest
+#nbresult
+#pygeohash
+#pytest
 seaborn
 sklearn
-yapf
+#yapf
 tensorflow
 nbimporter
 
 # prevent bq 3+ db-dtypes package error when running training from bq
-google-cloud-bigquery<3.0.0
+#google-cloud-bigquery<3.0.0
 google-cloud-storage
-pyarrow
+#pyarrow
 
-mlflow
-prefect<2
-prefect[viz]
-psycopg2-binary
+#mlflow
+#prefect<2
+#prefect[viz]
+#psycopg2-binary
 
 # API
-fastapi
-pytz
-uvicorn
+#fastapi
+#pytz
+#uvicorn
 # tests
-httpx
-pytest-asyncio
+#httpx
+#pytest-asyncio
