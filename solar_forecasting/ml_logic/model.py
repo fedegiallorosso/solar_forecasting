@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from tensorflow import keras
-from tensorflow.keras import Model, layers
+from keras import Model, layers
 from typing import Tuple
 
 end = time.perf_counter()
