@@ -103,7 +103,7 @@ def train_model(model: Model,
                 y_train: np.ndarray,
                 X_val: np.ndarray,
                 y_val: np.ndarray,
-                batch_size=64,
+                batch_size=32,
                 patience=5,
                 epochs=100,
                 ) -> Tuple[Model, dict]:
