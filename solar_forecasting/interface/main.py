@@ -65,15 +65,15 @@ def train():
     model = None
     # model params
     learning_rate = 0.01
-    batch_size = 256
+    batch_size = 64
     patience = 2
-    epochs=2
+    epochs=100
 
     # iterate on the full dataset per chunks
     chunk_id = 1
     metrics_list = []
 
-    while (chunk_id<2):
+    while (chunk_id<10):
 
         print(Fore.BLUE + f"\nLoading and training on preprocessed chunk n°{chunk_id}..." + Style.RESET_ALL)
 
