@@ -175,8 +175,8 @@ def evaluate():
     return mae
 
 if __name__ == '__main__':
-    #download()
+    download()
     #preprocess()
     #train()
-    evaluate()
+    #evaluate()
     #pred()
