@@ -176,7 +176,7 @@ def evaluate():
 
 if __name__ == '__main__':
     download()
-    #preprocess()
-    #train()
-    #evaluate()
+    preprocess()
+    train()
+    evaluate()
     #pred()
