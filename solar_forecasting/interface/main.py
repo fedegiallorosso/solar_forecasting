@@ -64,9 +64,9 @@ def train():
 
     model = None
     # model params
-    learning_rate = 0.01
-    batch_size = 64
-    patience = 2
+    learning_rate = 0.001
+    batch_size = 32
+    patience = 4
     epochs=100
 
     # iterate on the full dataset per chunks
