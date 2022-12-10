@@ -15,7 +15,7 @@ end = time.perf_counter()
 
 def feature_construction(data, y):
 
-    length=20
+    length=100
 
     X_train=np.zeros((length,4,51,51,2))
     for j in range (length):
@@ -52,7 +52,7 @@ def feature_construction(data, y):
 
     y_val=np.zeros((data.shape[1]-length,4,51,51,2))
     for j in range (data.shape[1]-length):
-        for i in range (4):
+        for i in range (length):
             for k in range (51):
                 for h in range (51):
                     for z in range (2):
