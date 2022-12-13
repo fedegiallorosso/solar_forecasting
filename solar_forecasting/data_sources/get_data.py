@@ -1,13 +1,14 @@
 from google.cloud import storage
 import os
-#from solar_forecasting.ml_logic.params import BUCKET_NAME, BLOB_NAME
 
 def download_file(bucket_name = os.environ.get("BUCKET_NAME"),
                     blob_name_X_train = os.environ.get("BLOB_NAME_X_TRAIN"),
                     blob_name_Y_train = os.environ.get("BLOB_NAME_Y_TRAIN"),
+                    blob_name_X_test = os.environ.get("BLOB_NAME_X_TEST"),
                     download_to_disk = True,
                     destination_file_name_X_train = os.path.join(os.environ.get("LOCAL_DATA_PATH"), "raw_data", os.environ.get("FINE_NAME_X_TRAIN")),
                     destination_file_name_Y_train = os.path.join(os.environ.get("LOCAL_DATA_PATH"), "raw_data", os.environ.get("FINE_NAME_Y_TRAIN")),
+                    destination_file_name_X_test = os.path.join(os.environ.get("LOCAL_DATA_PATH"), "raw_data", os.environ.get("FINE_NAME_X_TEST")),
                     ):
 
     """Download a file from Google Cloud Storage.
@@ -20,6 +21,8 @@ def download_file(bucket_name = os.environ.get("BUCKET_NAME"),
 
     blob_X_train = bucket.blob(blob_name_X_train)
     blob_Y_train = bucket.blob(blob_name_Y_train)
+    blob_X_test = bucket.blob(blob_name_X_test)
+
 
     if download_to_disk == True:
 
@@ -34,6 +37,13 @@ def download_file(bucket_name = os.environ.get("BUCKET_NAME"),
 
         print("Downloaded storage object {} \n from bucket {} \n to local file {}.".format(
             blob_name_Y_train, bucket_name, destination_file_name_Y_train))
+
+        blob_X_test.download_to_filename(destination_file_name_X_test)
+
+        print("Downloaded storage object {} \n from bucket {} \n to local file {}.".format(
+            blob_name_X_test, bucket_name, destination_file_name_X_test))
+
+
 
     if download_to_disk == False:
 

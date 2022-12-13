@@ -1,11 +1,12 @@
 import numpy as np
 import datetime
+import os
 
 def date_index(actual_day):
 
     '''Takes a date and returns the list of relevant indices in the data.'''
 
-    data = np.load('../raw_data/baseline.npz', allow_pickle = True)
+    data = np.load(os.path.join(os.environ.get("LOCAL_DATA_PATH"), "raw_data", os.environ.get("FINE_NAME_X_TRAIN")), allow_pickle = True)
     riv = data['datetime']
     date_format = []
 
@@ -26,16 +27,12 @@ def date_index(actual_day):
     else:
         return index
 
-# if __name__ == "__main__":
-#     date_index(actual_day='01-01-2012')
-#     print('Index retrieved!')
-
-def number_of_observations(actual_day):
+def number_of_observations(dx):
 
     '''Takes a date and returns the number of observations taken that day.'''
 
-    dx = datetime.datetime.strptime(actual_day, "%d-%m-%Y")
-    dx = dx.date()
+    #dx = datetime.datetime.strptime(actual_day, "%d-%m-%Y")
+    #dx = dx.date()
 
     d1 = datetime.date(2012,1,1)
     d2 = datetime.date(2012,2,20)
