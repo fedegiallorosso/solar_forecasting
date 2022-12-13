@@ -21,7 +21,7 @@ def get_chunk(index):
     data_Y_train = pd.read_csv(file_path_Y_train)
     data_Y_train=get_4D_output(data_Y_train)
 
-    month=[-1,123,248,403, 571,757,937,1123,1306,1456,1600,1720,1844]
+    month=[-1,123,248,403,571,757,937,1123,1306,1456,1600,1720,1844]
 
     # Extract features from data
     X_chunk=np.zeros((2,month[index]-month[index-1],4,81,81))
