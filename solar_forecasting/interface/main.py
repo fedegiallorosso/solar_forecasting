@@ -72,8 +72,8 @@ def train():
     # model params
     learning_rate = 0.001
     batch_size = 8
-    patience = 1
-    epochs=1 # should be 5
+    patience = 2
+    epochs=4 # should be 5
 
     # iterate on the full dataset per chunks
     chunk_id = 1
@@ -146,8 +146,9 @@ def train():
         plt.plot(loss_history)
         plt.plot(val_loss_history)
         plt.title('Model loss')
-        plt.ylabel('Loss')
+        plt.ylabel('Loss [MAE]')
         plt.xlabel('Day')
+        plt.xticks([1,30])
         plt.legend(['Train', 'Validation'], loc='upper left')
         plt.savefig(f'../../raw_data/Model_loss.png')
 
@@ -351,8 +352,8 @@ def pred():
             plt.title(time.time(), fontsize=100)
             if i < 4:
                 pic = ax.imshow(orig_data['GHI'][first_index + j, i, :, :], cmap='jet', vmin=vmin, vmax=vmax)
-            else:
-                pic = ax.imshow(GHI_PRED[first_index-1721+j, i-4, :, :], cmap='jet', vmin=vmin, vmax=vmax)
+            #else:
+                #pic = ax.imshow(GHI_PRED[first_index-1721+j, i-4, :, :], cmap='jet', vmin=vmin, vmax=vmax)
 
     plt.colorbar(pic)
     plt.savefig(f'../../raw_data/Pred.png')
@@ -360,9 +361,9 @@ def pred():
     return None
 
 if __name__ == '__main__':
-    #download()
-    #preprocess()
-    #train()
+    download()
+    preprocess()
+    train()
     #evaluate()
-    pred()
+    #pred()
     #plotting_prediction()
